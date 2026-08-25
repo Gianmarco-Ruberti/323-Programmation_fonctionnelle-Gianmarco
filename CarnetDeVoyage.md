@@ -7,8 +7,8 @@ Ce document relate les péripéties de ce voyage.
 
 ### Lundi
 
-- On a découvert le thème du projet Plot Those Lines, chacun choisit un domaine
-- Tout le monde est inscrit au projet dans MarketPlacae et y a référencé son repo. Certains doivent encore ajouter un Readme.
+- On a découvert le thème du projet Plot Those Lines, chacun a choisi un domaine
+- Tout le monde a référencé son repo dans MarketPlace. Certains doivent encore ajouter un Readme.
 - On a passé en revue le [Project Handbook](https://github.com/XCarrel/Project-Handbook/tree/T1_2026-2027_P_FUN_P_OO)
 
 ### Mardi
@@ -20,14 +20,14 @@ Ce document relate les péripéties de ce voyage.
 Notre but c'est qu'au bout de cette étape:
 
 - On a vu les [objectifs formels ICT](https://www.modulbaukasten.ch/module/323/1/fr-FR?title=Programmer-de-mani%C3%A8re-fonctionnelle)
-- On a survolé le [parcours](https://github.com/XCarrel/Project-Handbook/tree/T1_2026-2027_P_FUN_P_OO) qui nous attend
+- On a survolé le [parcours](https://roadmap.sh/r/embed?id=66b88565b64402e0526d8ebc) qui nous attend
 - On est d'accord sur les [modalités d'évaluation](evaluation/DEP.md) du module
 
 - On a vérifié nos paquetage de départ, en [révisant les concepts OO](exos/consolidation-OO/).
   - La terminologie ...
   - Un Dojo pratique ...
 
-- On a vu s'attaque à les première thématiques: les [paradigmes de programmation](https://github.com/XCarrel/323-Programmation_fonctionnelle/blob/main/supports/source/01-paradigmes.md) et la [généricité](https://etml-inf.github.io/323-Programmation_fonctionnelle/supports/source/01b-genericite.html) (en matière de programmation)
+- On s'est attaqué aux deux première thématiques: les [paradigmes de programmation](https://github.com/XCarrel/323-Programmation_fonctionnelle/blob/main/supports/source/01-paradigmes.md) et la [généricité](https://etml-inf.github.io/323-Programmation_fonctionnelle/supports/source/01b-genericite.html) (en matière de programmation)
 
 - On a revu la [manière de suivre un cours](USEME.md) avec Github et chacun mis en place son fork de [mon repo](https://github.com/XCarrel/323-Programmation_fonctionnelle), dans lequel il a créé son espace personnel
-- On a mis en oeuvre la généricité avec l'exercice 01 du fil rouge
+- On a mis en oeuvre la généricité avec [l'exercice 01](https://etml-inf.github.io/323-Programmation_fonctionnelle/exos/fil-rouge/esport/01-equipe-genericite/) du fil rouge
