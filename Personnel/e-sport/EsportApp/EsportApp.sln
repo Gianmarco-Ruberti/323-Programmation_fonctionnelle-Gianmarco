@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36327.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsportApp", "EsportApp\EsportApp.csproj", "{2F7A00E9-E2A7-406A-8CF0-31407D759B0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSeries", "..\DataSeries\DataSeries\DataSeries.csproj", "{D841320A-5309-4473-3629-442801A42F7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F7A00E9-E2A7-406A-8CF0-31407D759B0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F7A00E9-E2A7-406A-8CF0-31407D759B0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F7A00E9-E2A7-406A-8CF0-31407D759B0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F7A00E9-E2A7-406A-8CF0-31407D759B0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D841320A-5309-4473-3629-442801A42F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D841320A-5309-4473-3629-442801A42F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D841320A-5309-4473-3629-442801A42F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D841320A-5309-4473-3629-442801A42F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A551A62E-E70E-4752-98A4-AD4CEDE42CEF}
+	EndGlobalSection
+EndGlobal
