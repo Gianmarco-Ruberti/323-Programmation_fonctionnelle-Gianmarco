@@ -35,3 +35,4 @@ Notre but c'est qu'au bout de cette étape:
 - On a mis en oeuvre la généricité avec [l'exercice 01](https://etml-inf.github.io/323-Programmation_fonctionnelle/exos/fil-rouge/esport/01-equipe-genericite/) du fil rouge. Ça nous a permis de voir au passage:
   - Comment structurer une application console avec deux projet (un programme et une librairie)
   - Comment gérer les arguments d'un programme en CLI
+- On sait comment faire pour être prêt pour le checkpoint #1 la semaine prochaine
