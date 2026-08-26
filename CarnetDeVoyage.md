@@ -24,15 +24,17 @@ Notre but c'est qu'au bout de cette étape:
 - On est d'accord sur les [modalités d'évaluation](evaluation/DEP.md) du module
 
 - On a vérifié nos paquetage de départ, en [révisant les concepts OO](exos/consolidation-OO/).
-  - La terminologie ...
-  - Un Dojo pratique ...
+  - La terminologie : c'était une bonne chose qu'on le fasse, plusieurs termes n'étaient pas vraiment maîtrisés
+  - Un Dojo pratique : on n'a pas été au bout du programme, mais plein de questions importantes ont été remontées et discutées. On part avec une bonne base.
 
 - On s'est attaqué à une thématiques: les [paradigmes de programmation](https://github.com/XCarrel/323-Programmation_fonctionnelle/blob/main/supports/source/01-paradigmes.md)
 
-- On a revu la [manière de suivre un cours](USEME.md) avec Github et chacun mis en place son fork de [mon repo](https://github.com/XCarrel/323-Programmation_fonctionnelle), dans lequel il a créé son espace personnel
+- On a revu la [manière de suivre un cours](USEME.md) avec Github et chacun mis en place son fork de [mon repo](https://github.com/XCarrel/323-Programmation_fonctionnelle), dans lequel il a créé son espace personnel. J'ai les références de tous les forks. @Albert, @Snehan : je ne vois pas votre espace personnel dans le repo
 
-- On a étudié une deuxième thématique: [généricité](https://etml-inf.github.io/323-Programmation_fonctionnelle/supports/source/01b-genericite.html) (en matière de programmation)
-- On a mis en oeuvre la généricité avec [l'exercice 01](https://etml-inf.github.io/323-Programmation_fonctionnelle/exos/fil-rouge/esport/01-equipe-genericite/) du fil rouge. Ça nous a permis de voir au passage:
-  - Comment structurer une application console avec deux projet (un programme et une librairie)
-  - Comment gérer les arguments d'un programme en CLI
-- On sait comment faire pour être prêt pour le checkpoint #1 la semaine prochaine
+- On a étudié une deuxième thématique: [généricité](https://etml-inf.github.io/323-Programmation_fonctionnelle/supports/source/01b-genericite.html) (en matière de programmation). C'est complexe, la pente d'apprentissage est raide.
+
+- On a commencé la mise en oeuvre la généricité avec [l'exercice 01](https://etml-inf.github.io/323-Programmation_fonctionnelle/exos/fil-rouge/esport/01-equipe-genericite/) du fil rouge. On a vu comment
+  - Structurer une application console avec deux projet (un programme et une librairie)
+  - Déclarer notre première classe générique
+
+On n'est pas arrivé au bout de l'exercice, on reprendra ça la semaine prochaine
