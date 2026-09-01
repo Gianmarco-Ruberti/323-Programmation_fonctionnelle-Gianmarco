@@ -3,11 +3,37 @@ import { glob } from 'glob'
 import path from 'path'
 import { readdirSync, statSync, existsSync, writeFileSync, copyFileSync, mkdirSync, readFileSync } from 'fs'
 import type MarkdownIt from 'markdown-it'
+import pkg from '../package.json'
 
-process.env.VITE_EXTRA_EXTENSIONS = 'docx,pdf,csv'
+// Fail build when siteBase doesn't match the actual GitHub repo name (CI only)
+if (process.env.GITHUB_REPOSITORY) {
+  const repoName = process.env.GITHUB_REPOSITORY.split('/')[1]
+  const expected = `/${repoName}/`
+  if (pkg.siteBase !== expected) {
+    throw new Error(`[config] siteBase mismatch: package.json="${pkg.siteBase}" vs GITHUB_REPOSITORY implies "${expected}"`)
+  }
+}
+
+process.env.VITE_EXTRA_EXTENSIONS = 'docx,pdf,csv,xlsx'
 
 // Transforme les liens vers fil-rouge/*/<ex>/ en composant <FilRougeLink> dynamique.
 // Le markdown reste navigable en dehors de VitePress (lien statique vers le fil rouge par défaut).
+function exoLinksPlugin(md: MarkdownIt) {
+  md.core.ruler.push('exo-links', (state) => {
+    for (const blockToken of state.tokens) {
+      if (blockToken.type !== 'inline' || !blockToken.children) continue
+      for (const token of blockToken.children) {
+        if (token.type !== 'link_open') continue
+        const href = token.attrGet('href') ?? ''
+        // trailing-slash exo links (non fil-rouge) → ajoute README.md pour que VitePress traite le lien avec base
+        if (/exos\/(?!fil-rouge)[^/]+\/$/.test(href)) {
+          token.attrSet('href', href + 'README.md')
+        }
+      }
+    }
+  })
+}
+
 function filRougeLinksPlugin(md: MarkdownIt) {
   md.core.ruler.push('fil-rouge-links', (state) => {
     for (const blockToken of state.tokens) {
@@ -88,6 +114,7 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       filRougeLinksPlugin(md)
+      exoLinksPlugin(md)
     }
   },
 
@@ -162,8 +189,15 @@ export default defineConfig({
     }
   },
 
-  ignoreDeadLinks: true,
-  base: "/323-Programmation_fonctionnelle/",//for gh pages
+  ignoreDeadLinks: [
+    /\/slides\//,                      // Slidev output — not VitePress pages
+    /\.(pdf|xlsx|docx|csv|pptx|cs|html)$/i,  // static assets VitePress doesn't process
+    /\/assets\/SearchSpeed/,           // C# demo project directory, no index page
+    /\/gpx\//,                         // GPX data directory, no index page
+    /^\.\/(billboard|crawler\/index)$/, // swapi static HTML templates (VitePress strips .html before checking)
+  ],
+  base: pkg.siteBase,
+  srcExclude: ['slides/**'],
 
   rewrites: {
     'README.md': 'index.md',
