@@ -3,6 +3,8 @@
 Du 24 août au 30 octobre 2026, la classe CMID3b et moi avons parcouru un chemin d'apprentissage de la programmation fonctionnelle.  
 Ce document relate les péripéties de ce voyage.
 
+<hr>
+
 ## Semaine 35 (24 août)
 
 ### Lundi
@@ -38,3 +40,49 @@ Notre but c'est qu'au bout de cette étape:
   - Déclarer notre première classe générique
 
 On n'est pas arrivé au bout de l'exercice, on reprendra ça la semaine prochaine
+
+<hr>
+
+## Semaine 36 (31 août)
+### Lundi
+
+La mission du jour était: finaliser l'analyse fonctionnelle et la planification initiale. Idéalement, il aurait dû être possible de faire la livraison de vendredi dès aujourd'hui en fin de matinée.
+
+J'ai passé vers à peu près tout le monde. Le constat est que la rédaction de User Stories n'est pas encore maîtrisée, personne n'ayant pu me montrer une user story bien formulée du premier coup.  
+Je tiens à ce que le codage ne commence que à partir du moment où au moins une US est bien formulée. Je préfère avoir peu de US de bonne qualité que beaucoup de US de mauvaise qualité. Conséquence:
+
+> Pour la livraison du 4 septembre, je ne damande pas une analyse fonctionnelle complète. Je n'attends que une ou deux US totalisant au minimum 5 bons tests d'acceptance 
+
+N'ayant reçu aucune livraison, j'en déduis que tout le monde a encore du travail à fournir pour arriver à ce stade.
+
+### Mercredi (plan)
+
+On commencera avec le checkpoint #1.
+
+On va faire un Sync Fork, parce que j'ai mis à jour des supports.  
+
+On va voir ensemble la solution du début de l'étape 1 de l'application ESportApp, dans laquelle on sépare clairement les aspects métiers et les "logistique":
+- Le projet `ESportApp` contient des classes propres au domaine (métier): `CS2Match`, `LolMatch`, `ValorantMatch`)
+- Le projet `Dataseries` contient les moyens de gérer des séries de `<un_certain_type>`
+
+On va commencer par voir qu'avec C#, on peut aussi **stocker une fonction dans une variable** .
+
+Et si on peut mettre une fonction dans une variable, cela veut dire qu'on peut également **donner une fonction comme argument à une autre fonction**. Du coup, cette dernière est ce qu'on appelle une [fonction d'ordre supérieur](./supports/source/02a-fonctions-sup.md)
+
+On se prendra une pause à ce moment
+
+On va mettre en pratique avec l'étape 1 de l'[exercice 2](./exos/fil-rouge/esport/02-recrues-generation/README.md) du fil rouge, dans laquelle on importe les données à partir de fichiers CSV en s'appuyant sur des fonctions spécialisées pour parser les données.
+
+
+
+Une fois 
+<hr>
+
+## Semaine 37 (7 septembre)
+### Lundi
+
+Objectif: pouvoir commencer la réalisation
+
+Prérequis:
+- Avoir au moins une US valide dans laquelle la séquence de démarrage de l'application est décrite
+- Avoir des données à disposition (5 séries cohérentes de 500 valeurs chacune)
