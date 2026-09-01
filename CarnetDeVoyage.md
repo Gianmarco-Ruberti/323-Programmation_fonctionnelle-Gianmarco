@@ -73,9 +73,10 @@ On se prendra une pause à ce moment
 
 On va mettre en pratique avec l'étape 1 de l'[exercice 2](./exos/fil-rouge/esport/02-recrues-generation/README.md) du fil rouge, dans laquelle on importe les données à partir de fichiers CSV en s'appuyant sur des fonctions spécialisées pour parser les données.
 
+Une fois que notre application sera capable de lire les fichiers, nous allons commencer à jouer avec nos statistiques grâce aux premières méthodes LinQ de la [cheatsheet](./supports/linq-cheatsheet.pdf).
 
+S'il nous reste du temps et de l'énergie, nous allons ajouter un traitement des arguments à notre application: choisir entre des données hardcodées ou en provenance de fichiers.
 
-Une fois 
 <hr>
 
 ## Semaine 37 (7 septembre)
