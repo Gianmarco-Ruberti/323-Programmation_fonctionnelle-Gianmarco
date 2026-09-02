@@ -16,5 +16,13 @@ namespace DataSeries
 
         public int Count => _data.Count();
         public IEnumerable<T> Values => _data;
+
+        public static DataSeries<T> FromCsv(string path, Func<string[], T> parser)
+        {
+            {
+                var lines = File.ReadAllLines(path).Skip(1); // ignorer l'en-tête
+                return new DataSeries<T>(lines.Select(line => parser(line.Split(','))));
+            }
+        }
     }
 }
