@@ -9,14 +9,14 @@ namespace EsportApp
 {
     public static class MatchGenerator
     {
-        public static DataSeries<Cs2Match> GenerateCs2(string player, int count, int seed = 42)
+        public static DataSeries<DataPoint<Cs2Match>> GenerateCs2(string player, int count, int seed = 42)
         {
             var rng = new Random(seed);
             var maps = new[] { "Dust2", "Mirage", "Inferno", "Nuke", "Ancient" };
             var sides = new[] { "CT", "T" };
             var start = new DateTime(2023, 9, 1); // début de la pré-saison
 
-            return DataSeries<Cs2Match>.From(
+            return DataSeries<DataPoint<Cs2Match>>.From(
                 Enumerable.Range(1, count)
                     .Select(i => new DataPoint<Cs2Match>(
                         start.AddDays(i),
