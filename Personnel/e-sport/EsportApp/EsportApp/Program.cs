@@ -36,6 +36,7 @@ DataPoint<LolMatch> ParseLoL(string[] cols)
             (
                 cols[1], 
                 cols[2], 
+                cols[3],
                 int.Parse(cols[4]), 
                 int.Parse(cols[5]), 
                 int.Parse(cols[6]), 
