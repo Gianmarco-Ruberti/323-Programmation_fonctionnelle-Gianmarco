@@ -1,5 +1,7 @@
 ﻿using DataSeries;
 using EsportApp;
+using System.Linq;
+
 DataSeries<DataPoint<ValorantMatch>> valorant;
 DataSeries<DataPoint<Cs2Match>> cs2;
 DataSeries<DataPoint<LolMatch>> lol;
@@ -59,6 +61,9 @@ DataPoint<ValorantMatch> ParseValorant(string[] cols)
     return new DataPoint<ValorantMatch>(date, match);
 }
 
+var raphaelGenerated = MatchGenerator.GenerateCs2("Raphaël", 20);
+
+Console.WriteLine(raphaelGenerated.Count);
 Console.WriteLine($"Valorant : {valorant.Count} matchs");
 Console.WriteLine($"CS2      : {cs2.Count} matchs");
 Console.WriteLine($"LoL      : {lol.Count} matchs");
