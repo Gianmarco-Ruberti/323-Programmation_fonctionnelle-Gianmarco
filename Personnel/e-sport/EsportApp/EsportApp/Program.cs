@@ -8,6 +8,15 @@ DataSeries<DataPoint<LolMatch>> lol;
 valorant = DataSeries< DataPoint<ValorantMatch>>.FromCsv("data/valorant.csv", ParseValorant);
 cs2 = DataSeries<DataPoint<Cs2Match>>.FromCsv("data/cs2.csv", ParseCS2);
 lol = DataSeries<DataPoint<LolMatch>>.FromCsv("data/lol.csv", ParseLoL);
+void ExportCs2(DataSeries<Cs2Match> matches, string path)
+{
+    var header = "date,player,map,start_side,kills,deaths,assists,mvps,won";
+    var lines = matches.DataPoints.Select(dp =>
+        $"{dp.Timestamp:yyyy-MM-dd},{dp.Value.Player},{dp.Value.Map},{dp.Value.StartSide}," +
+        $"{dp.Value.Kills},{dp.Value.Deaths},{dp.Value.Assists},{dp.Value.Mvps},{dp.Value.Won.ToString().ToLower()}"
+    );
+    File.WriteAllLines(path, lines.Prepend(header));
+}
 DataPoint<Cs2Match> ParseCS2(string[] cols)
 {
     return new DataPoint<Cs2Match>
