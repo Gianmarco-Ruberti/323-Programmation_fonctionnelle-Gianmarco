@@ -67,10 +67,12 @@ ValorantMatch ParseValorant(string[] cols)
 }
 
 var raphaelGenerated = MatchGenerator.GenerateCs2("Raphaël", 20);
+var baaad = valorant.Outliers(m => m.Kills < 0);
+
 
 foreach (var point in raphaelGenerated.value)
 {
-    Cs2Match match = point.Value;
+    Cs2Match match = point;
 
     Console.WriteLine($"Date: {point.Timestamp:dd/MM/yyyy}");
     Console.WriteLine($"Carte: {match.Map} | Côté: {match.StartSide}");
@@ -81,6 +83,8 @@ foreach (var point in raphaelGenerated.value)
 
 Console.WriteLine(raphaelGenerated.Count);
 Console.WriteLine($"Valorant : {valorant.Count} matchs");
+Console.WriteLine(baaad.Count);     // sous-ensemble
+
 Console.WriteLine($"CS2      : {cs2.Count} matchs");
 Console.WriteLine($"LoL      : {lol.Count} matchs");
 // Total : 75 matchs
