@@ -8,8 +8,9 @@ namespace EsportApp
 {
     public class LolMatch
     {
-        public LolMatch(string player, string champion,string role, int kills, int deaths, int assists, int cs, int visionScore, bool won)
+        public LolMatch(string timestamp, string player, string champion,string role, int kills, int deaths, int assists, int cs, int visionScore, bool won)
         {
+            Timestamp = DateTime.Parse(timestamp);
             Player = player;
             Champion = champion;
             Role = role;
@@ -20,7 +21,7 @@ namespace EsportApp
             VisionScore = visionScore;
             Won = won;
         }
-
+        public DateTime Timestamp { get; }
         public string Player { get; }
         public string Champion { get; }
         public string Role { get; }

@@ -8,8 +8,9 @@ namespace EsportApp
 {
     public class ValorantMatch
     {
-        public ValorantMatch(string player, string agent, int kills, int deaths, int assists, int headshots, int rounds_won, bool won)
+        public ValorantMatch(string timestamp, string player, string agent, int kills, int deaths, int assists, int headshots, int rounds_won, bool won)
         {
+            Timestamp = DateTime.Parse(timestamp);
             Player = player;
             Agent = agent;
             Kills = kills;
@@ -20,6 +21,7 @@ namespace EsportApp
             Won = won;
         }
 
+        public DateTime Timestamp { get; }
         public string Player { get; }
         public string Agent { get; }
         public int Kills { get; }
