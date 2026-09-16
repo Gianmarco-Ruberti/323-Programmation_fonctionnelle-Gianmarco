@@ -3,28 +3,26 @@ using EsportApp;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-DataSeries<DataPoint<ValorantMatch>> valorant;
-DataSeries<DataPoint<Cs2Match>> cs2;
-DataSeries<DataPoint<LolMatch>> lol;
-valorant = DataSeries<DataPoint<ValorantMatch>>.FromCsv("data/valorant.csv", ParseValorant);
-cs2 = DataSeries<DataPoint<Cs2Match>>.FromCsv("data/cs2.csv", ParseCS2);
-lol = DataSeries<DataPoint<LolMatch>>.FromCsv("data/lol.csv", ParseLoL);
+DataSeries<ValorantMatch> valorant;
+DataSeries<Cs2Match> cs2;
+DataSeries<LolMatch> lol;
+valorant = DataSeries<ValorantMatch>.FromCsv("data/valorant.csv", ParseValorant);
+cs2 = DataSeries<Cs2Match>.FromCsv("data/cs2.csv", ParseCS2);
+lol = DataSeries<LolMatch>.FromCsv("data/lol.csv", ParseLoL);
 void ExportCs2(DataSeries<Cs2Match> matches, string path)
 {
     var header = "date,player,map,start_side,kills,deaths,assists,mvps,won";
-    var lines = matches.DataPoints.Select(dp =>
-        $"{dp.Timestamp:yyyy-MM-dd},{dp.Value.Player},{dp.Value.Map},{dp.Value.StartSide}," +
-        $"{dp.Value.Kills},{dp.Value.Deaths},{dp.Value.Assists},{dp.Value.Mvps},{dp.Value.Won.ToString().ToLower()}"
+    var lines = matches.value.Select(dp =>
+        $"{dp.Timestamp:yyyy-MM-dd},{dp.Player},{dp.Map},{dp.StartSide}," +
+        $"{dp.Kills},{dp.Deaths},{dp.Assists},{dp.Mvps},{dp.Won.ToString().ToLower()}"
     );
     File.WriteAllLines(path, lines.Prepend(header));
 }
-DataPoint<Cs2Match> ParseCS2(string[] cols)
+Cs2Match ParseCS2(string[] cols)
 {
-    return new DataPoint<Cs2Match>
+    return new Cs2Match
         (
-            DateTime.Parse(cols[0]),
-            new Cs2Match
-            (
+                cols[0],
                 cols[1],
                 cols[2],
                 cols[3],
@@ -33,17 +31,14 @@ DataPoint<Cs2Match> ParseCS2(string[] cols)
                 int.Parse(cols[6]),
                 int.Parse(cols[7]),
                 bool.Parse(cols[8])
-            )
         );
 }
 
-DataPoint<LolMatch> ParseLoL(string[] cols)
+LolMatch ParseLoL(string[] cols)
 {
-    return new DataPoint<LolMatch>
+    return new LolMatch
         (
-            DateTime.Parse(cols[0]),
-            new LolMatch
-            (
+                cols[0],
                 cols[1],
                 cols[2],
                 cols[3],
@@ -53,12 +48,13 @@ DataPoint<LolMatch> ParseLoL(string[] cols)
                 int.Parse(cols[7]),
                 int.Parse(cols[8]),
                 bool.Parse(cols[9])
-            )
         );
 }
-DataPoint<ValorantMatch> ParseValorant(string[] cols)
+ValorantMatch ParseValorant(string[] cols)
 {
-    ValorantMatch match = new ValorantMatch(
+    return new ValorantMatch
+    (
+    cols[0],              // date
     cols[1],              // player
     cols[2],              // agent
     int.Parse(cols[3]),   // kills
@@ -68,16 +64,13 @@ DataPoint<ValorantMatch> ParseValorant(string[] cols)
     int.Parse(cols[7]),   // roundsWon
     bool.Parse(cols[8])   // won
     );
-    DateTime date = DateTime.Parse(cols[0]);
-    return new DataPoint<ValorantMatch>(date, match);
 }
 
 var raphaelGenerated = MatchGenerator.GenerateCs2("Raphaël", 20);
 
-foreach (var point in raphaelGenerated.DataPoints)
+foreach (var point in raphaelGenerated.value)
 {
-    DataPoint<Cs2Match> dataMatch = point.Value;
-    Cs2Match match = Parse.point.Value;
+    Cs2Match match = point.Value;
 
     Console.WriteLine($"Date: {point.Timestamp:dd/MM/yyyy}");
     Console.WriteLine($"Carte: {match.Map} | Côté: {match.StartSide}");
