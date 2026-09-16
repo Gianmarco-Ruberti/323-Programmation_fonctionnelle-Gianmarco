@@ -7,7 +7,7 @@ namespace DataSeries
 {
     public class DataSeries<T>
     {
-        private readonly IEnumerable<T> _data;
+        private IEnumerable<T> _data;
 
         private DataSeries(IEnumerable<T> data) => _data = data;
 
@@ -19,6 +19,11 @@ namespace DataSeries
 
         public DataSeries<T> Outliers(Func<T, bool> predicate)
             => DataSeries<T>.From(_data.Where(predicate));
+
+        public void Sanitize(Func<T, bool> isInvalid)
+        {
+        _data = this.value.Where(item => !isInvalid(item)).ToList();
+        }
 
         public static DataSeries<T> FromCsv(string path, Func<string[], T> parser)
         {

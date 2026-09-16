@@ -9,6 +9,26 @@ DataSeries<LolMatch> lol;
 valorant = DataSeries<ValorantMatch>.FromCsv("data/valorant.csv", ParseValorant);
 cs2 = DataSeries<Cs2Match>.FromCsv("data/cs2.csv", ParseCS2);
 lol = DataSeries<LolMatch>.FromCsv("data/lol.csv", ParseLoL);
+// Valorant : filtre les statistiques aberrantes
+valorant.Sanitize(m =>
+    m.Kills < 0 || m.Kills > 50 ||
+    m.Deaths < 0 || m.Deaths > 30 ||
+    m.Assists < 0
+);
+
+// CS2 : filtre les K+A impossibles ou décès négatifs
+cs2.Sanitize(m =>
+    m.Kills + m.Assists > 50 ||
+    m.Deaths < 0
+);
+
+// LoL : filtre les valeurs anormales
+lol.Sanitize(m =>
+    m.Kills > 10 ||
+    m.Deaths < 1 ||
+    m.Assists < 0 ||
+    m.Cs < 0
+);
 void ExportCs2(DataSeries<Cs2Match> matches, string path)
 {
     var header = "date,player,map,start_side,kills,deaths,assists,mvps,won";
@@ -83,7 +103,8 @@ foreach (var point in raphaelGenerated.value)
 
 Console.WriteLine(raphaelGenerated.Count);
 Console.WriteLine($"Valorant : {valorant.Count} matchs");
-Console.WriteLine(baaad.Count);     // sous-ensemble
+valorant.Sanitize(m => m.Kills < 9);
+Console.WriteLine(valorant.Count); // 24
 
 Console.WriteLine($"CS2      : {cs2.Count} matchs");
 Console.WriteLine($"LoL      : {lol.Count} matchs");
