@@ -18,6 +18,7 @@ namespace EsportApp
         public int Smooth { get; set; } = 1;                  // Taille de la fenêtre de lissage (1 = aucun lissage)
         public string? GenerateTarget { get; set; } = null;   // Cible pour la génération de données ("joueur", "all" ou null)
         public string ErrorMode { get; set; } = "soft";       // Mode de gestion des erreurs/anomalies : "strict", "soft" ou "hard"
+        public string Extract { get; set; } = "min";
     }
 
     /// <summary>
@@ -146,11 +147,13 @@ namespace EsportApp
                         options.ErrorMode = errorVal.ToLower();
                         break;
                     case "--extract":
-                        if(!TryGetNextArg(args, ref i, out string extractVal))
+                        if(!TryGetNextArg(args, ref i, out string extractVal) ||
+                            !new[] { "min", "max", "avg", "mme" }.Contains(extractVal.ToLower()))
                         {
-                            Console.WriteLine("oui");
+                            Console.WriteLine($"Erreur : Valeur invalide pour --extract. Attendu : min|max|avg|mme.");
                             return;
                         }
+                        options.Player = extractVal;
                         break;
 
                     // Gestion des options non reconnues
@@ -196,6 +199,7 @@ Sélection des données
   --game   valorant|cs2|lol    Jeu à analyser              (défaut : les trois)
   --player <nom>               Restreindre à un joueur     (défaut : tous)
   --filter wins|losses|all     Issue des matchs retenus    (défaut : all)
+  --extract min|max|avg|mme    Donne la valeur demander    (défaut : jsp)
 
 Analyse
   --stat   kda|kills|assists   Indicateur calculé/affiché  (défaut : kda)
@@ -245,6 +249,7 @@ Divers
             Console.WriteLine($"  - Normalize : {options.Normalize}");
             Console.WriteLine($"  - Smooth    : {options.Smooth}");
             Console.WriteLine($"  - ErrorMode : {options.ErrorMode}");
+            Console.WriteLine($"  - Extract   : {options.Extract}");
 
             // Insérer ici le code d'analyse des données réelles
         }
