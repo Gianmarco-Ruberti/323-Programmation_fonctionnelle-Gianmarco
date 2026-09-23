@@ -1,7 +1,5 @@
 ﻿using DataSeries;
 using EsportApp;
-using System.Linq;
-using System.Text.RegularExpressions;
 
 DataSeries<ValorantMatch> valorant;
 DataSeries<Cs2Match> cs2;
@@ -29,6 +27,14 @@ lol.Sanitize(m =>
     m.Assists < 0 ||
     m.Cs < 0
 );
+
+// Si des arguments sont transmis en ligne de commande, exécuter le CLI
+if (args.Length > 0)
+{
+    Cli.Run(args);
+    return;
+}
+
 void ExportCs2(DataSeries<Cs2Match> matches, string path)
 {
     var header = "date,player,map,start_side,kills,deaths,assists,mvps,won";
