@@ -310,7 +310,7 @@ En termes d'avancement dans l'exercice 5, il est globalement inexistant. Il y a 
 
 ## Etape 6
 
-### Lundi 21 septembre
+### Lundi 28 septembre
 
 Remise en route après deux semaines d'inactivité sur le projet:
 
@@ -332,3 +332,52 @@ On fait le checkpoint #5 qui porte principalement sur la réduction.
 On fait l'évaluation formative (correction en DoJo après la pause).
 
 Chacun continue les étapes de ESportApp
+
+#### Bilan
+
+- Il y a eu plus d'une heure à disposition après la correction de la formative.
+- Il y a 9 repos sur 12 qui n'ont aucune trace d'activité.
+- Il n'y a aucun commit "WIP" en vue d'être repris plus tard en dehors du cours.
+- Aucune note n'a été prise durant la correction de la formative
+- Aucune photo n'est prise tu tableau blanc
+
+Plus généralement (mais cela a été le cas aujourd'hui):
+- Chaque explication que je donne est suivie d'une invitation aux questions. Il n'y en a pour ainsi dire jamais.
+- Chaque question de type "Avez-vous compris ?" est collectivement répondue par oui
+- Les demandes d'aide/explications individuelles durant les moment d'exercice sont rares
+
+## Etape 7
+
+### Lundi 5 octobre
+
+- Je demande une livraison d'ici à vendredi 9 (par oral et par message Teams) sur la base de laquelle je pourrai faire un retrour "à 80%", au début des vacances.
+- Je discute avec quelques-un
+
+### Mercredi 7 octobre
+
+Epreuve sommative:
+- Un fichier .zip est fourni par un devoir Teams. Le dézipper localement.
+- Le dossier résultant contient un repo git. Si vous travaillez avec Github Desktop, vous pouvez l'ajouter localement (
+  `File > Add local repository...`).
+- Le dossier `demo` contient un exécutable du programme demandé
+- Le dossier `data` contient des données de test
+  - On fait une copie des fichiers dans un dossier "newer" pour avoir des dates différentes
+- Ouvrir la solution dans `src` et lancer le programme. Il affiche l'aide de l'utilitaire à coder, avec `John Doe` comme
+  auteur.
+- Remplacez `John Doe` par votre nom dans le code source et faites un commit nommé
+  `feat(Help): Changer le nom de l'auteur`.
+- **NE PUBLIEZ JAMAIS CE REPO SUR GITHUB (⛔ DO NOT PUSH)**, cela serait considéré comme une tentative de communication.
+- Le code fourni une série de `// TODO` qui vous indique le travail à réaliser. Ils sont numérotés pour vous guider sur
+  un chemin possible de réalisation. Vous n'êtes pas obligé de suivre cet ordre scrupuleusement.
+- Faites un commit à chaque fois que vous avez accompli un `// TODO`, mais (rappel) **ne publiez pas le repo**.
+- Si, en cours route, vous êtes bloqué par un problème que vous ne savez pas comment traiter, vous pouvez "acheter" la
+  réponse auprès de votre prof. Le nombre de points du TODO est perdu.
+- À la fin du temps imparti :
+    - Sauvegarder vos dernières modifications
+    - Faites un dernier commit
+    - Quittez Visual Studio
+    - Faites un .zip du dossier
+    - Renvoyez ce .zip à votre enseignant (par le devoir Teams)
+    - ⚠ Après confirmation de réception, SUPPRIMER le dossier ET le zip de tout support (y compris la corbeille)
+- Si vous terminez avant 12h15, vous travaillez sur votre projet
+
