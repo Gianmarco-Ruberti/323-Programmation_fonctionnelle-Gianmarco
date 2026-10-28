@@ -381,3 +381,33 @@ Epreuve sommative:
     - ⚠ Après confirmation de réception, SUPPRIMER le dossier ET le zip de tout support (y compris la corbeille)
 - Si vous terminez avant 12h15, vous travaillez sur votre projet
 
+## Etape 8
+
+### Lundi 26 octobre
+
+- Confirmation du délai de livraison: ven 30 octobre
+- Feedback à 80% poussé sur tous les repos. Ils sont trois à ne pas avoir fait de livraison.
+- Discussion avec certains. Je pose les questions techniques à la majorité
+
+- Annonce par Teams: le checkpoint de mercredi aura 20 points, ce qui donne une chance à plusieurs de remonter leur note
+
+### Mercredi 28 octobre
+
+Je rends les feuilles d'évaluation du [test sommatif](https://eduvaud.sharepoint.com/:f:/r/sites/ETML_INF-GRP3D-26-27_Teams-I323-Programmationfonctionnelle/Documents%20partages/Test%20Sommatif?d=wbd4e0a6a0b654befa46d4176c80b4edc&csf=1&web=1&e=t9B5pl) et on passe en revue le corrigé de l'épreuve KTD.
+
+On voit ensemble la théorie de [la pureté, de l'immutabilité](./supports/source/06-PureteImmutabilite.md) et des [méthodes d'extensions](./supports/source/05-Extension.md).
+
+Temps librement géré. Les activités possibles sont:
+- Etude approfondie des trois sujets abordés: seul, en groupe, avec moi ou avec une IA.
+- Mise en pratique au travers de l'exercice [running](./exos/running/) du catalogue
+- Pratique/révision/approfondissement plus général en effectuant un des exercices du [catalogue](./exos/)
+- Travail sur le projet
+- Remplissage du document de feedback
+
+11h25: pause et aération
+11h30: checkpoint #6 (reprise de l'activité précédente après rendu)
+11h50: corrigé
+12h05: revue du [feedback sur le module](https://eduvaud.sharepoint.com/:w:/r/sites/ETML_INF-GRP3D-26-27_Teams-I323-Programmationfonctionnelle/Documents%20partages/Feedback%20module.docx?d=w5748b320977a4bbfab2467aae883b2c2&csf=1&web=1&e=RnIPHM)
+
+## Fin du voyage
+... mais un autre commence lundi !
